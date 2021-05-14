@@ -104,7 +104,7 @@ const getDBFilePath = (DBFile) => {
   } else if (process.platform === 'win32') {
     switch (conf['browser']) {
     default:
-      return `${os.homedir}${sep}AppData${sep}Local${sep}Google${sep}Chrome${sep}User Data${sep}${conf['chrome_profile']}${DBFile}`;
+      return `${os.homedir}${sep}AppData${sep}Local${sep}Google${sep}Chrome${sep}User Data${sep}${conf['chrome_profile']}${sep}${DBFile}`;
     }
   }
   throw new Error(
