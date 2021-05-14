@@ -1,14 +1,14 @@
 {
   "$schema": "some_schema_file_path",
   "defaultIcon": "icon.png",
-  "bundleId": "alfred-chrome-workflow",
+  "bundleId": "arvis-chrome-workflow",
   "category": "Productivity",
   "createdby": "jopemachine",
-  "description": "Chrome kernel based broswer workflow for Alfred 4",
-  "name": "alfred-chrome-workflow",
-  "readme": "https://github.com/jopemachine/alfred-chrome-workflow",
+  "description": "Chrome kernel based broswer workflow for Arvis 4",
+  "name": "arvis-chrome-workflow",
+  "readme": "https://github.com/jopemachine/arvis-chrome-workflow",
   "version": "",
-  "webaddress": "https://github.com/jopemachine/alfred-chrome-workflow",
+  "webaddress": "https://github.com/jopemachine/arvis-chrome-workflow",
   "enabled": true,
   "commands": [
     {
@@ -200,7 +200,7 @@
             "action": {
               "then": [
                 {
-                  "type": "alfred.workflow.output.callexternaltrigger",
+                  "type": "arvis.workflow.output.callexternaltrigger",
                   "error": "Not supported"
                 }
               ],
@@ -252,7 +252,7 @@
                     "action": {
                       "then": [
                         {
-                          "type": "alfred.workflow.output.callexternaltrigger",
+                          "type": "arvis.workflow.output.callexternaltrigger",
                           "error": "Not supported"
                         }
                       ],
@@ -337,7 +337,7 @@
           "text": "{query}",
           "action": [
             {
-              "type": "alfred.workflow.output.dispatchkeycombo",
+              "type": "arvis.workflow.output.dispatchkeycombo",
               "error": "Not supported"
             }
           ]
@@ -360,7 +360,7 @@
       "arg_type": "optional",
       "action": [
         {
-          "type": "alfred.workflow.action.actioninalfred",
+          "type": "arvis.workflow.action.actioninarvis",
           "error": "Not supported"
         }
       ]
@@ -381,7 +381,7 @@
           "text": "{query}",
           "action": [
             {
-              "type": "alfred.workflow.output.dispatchkeycombo",
+              "type": "arvis.workflow.output.dispatchkeycombo",
               "error": "Not supported"
             }
           ]

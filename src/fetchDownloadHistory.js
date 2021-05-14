@@ -11,7 +11,6 @@ const {
   getLocaleString,
 } = require('./utils');
 const userName = require('os').userInfo().username;
-const path = require('path');
 const sep = path.sep;
 
 const conf = alfy.config.get('setting');
