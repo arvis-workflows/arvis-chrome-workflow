@@ -1,0 +1,397 @@
+{
+  "$schema": "some_schema_file_path",
+  "defaultIcon": "icon.png",
+  "bundleId": "alfred-chrome-workflow",
+  "category": "Productivity",
+  "createdby": "jopemachine",
+  "description": "Chrome kernel based broswer workflow for Alfred 4",
+  "name": "alfred-chrome-workflow",
+  "readme": "https://github.com/jopemachine/alfred-chrome-workflow",
+  "version": "",
+  "webaddress": "https://github.com/jopemachine/alfred-chrome-workflow",
+  "enabled": true,
+  "commands": [
+    {
+      "type": "keyword",
+      "command": "ch > init",
+      "text": "Init your config file",
+      "subtitle": "",
+      "withspace": false,
+      "arg_type": "no",
+      "action": [
+        {
+          "modifiers": "normal",
+          "type": "script",
+          "script": "./node_modules/.bin/run-node src/init.js"
+        }
+      ]
+    },
+    {
+      "type": "keyword",
+      "command": "ch > cache",
+      "text": "ch > cache",
+      "subtitle": "Cache favicon images in advance from visit history",
+      "withspace": false,
+      "arg_type": "no",
+      "action": [
+        {
+          "modifiers": "normal",
+          "type": "script",
+          "script": "./node_modules/.bin/run-node src/cacheFavicons.js '{query}'",
+          "action": [
+            {
+              "modifiers": "normal",
+              "type": "notification",
+              "title": "Caching completed successfully",
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "keyword",
+      "command": "ch > clearcache",
+      "text": "ch > clearcache",
+      "subtitle": "Clean favicon cache",
+      "withspace": false,
+      "arg_type": "no",
+      "action": [
+        {
+          "modifiers": "normal",
+          "type": "script",
+          "script": "./node_modules/.bin/run-node src/clearCache.js",
+          "action": [
+            {
+              "modifiers": "normal",
+              "type": "notification",
+              "title": "Cache cleared",
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "scriptfilter",
+      "command": "chs",
+      "title": "chs",
+      "subtitle": "Search chrome queries",
+      "script_filter": "./node_modules/.bin/run-node src/chromeSearch.js '{query}'",
+      "running_subtext": "Searching...",
+      "withspace": true,
+      "arg_type": "optional",
+      "action": [
+        {
+          "modifiers": "normal",
+          "type": "args",
+          "arg": "{var:type}",
+          "action": [
+            {
+              "modifiers": "normal",
+              "type": "cond",
+              "if": {
+                "cond": "new RegExp(\".*url.*\").test({query})",
+                "action": {
+                  "then": [
+                    {
+                      "modifiers": "normal",
+                      "type": "open",
+                      "target": "{var:url}"
+                    }
+                  ],
+                  "else": [
+                    {
+                      "modifiers": "normal",
+                      "type": "open",
+                      "target": "https://www.google.com/search?q={var:query}"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "modifiers": "cmd",
+          "type": "args",
+          "arg": "{var:type}",
+          "action": [
+            {
+              "modifiers": "normal",
+              "type": "cond",
+              "if": {
+                "cond": "new RegExp(\".*url.*\").test({query})",
+                "action": {
+                  "then": [
+                    {
+                      "modifiers": "normal",
+                      "type": "clipboard",
+                      "text": "{var:url}"
+                    }
+                  ],
+                  "else": [
+                    {
+                      "modifiers": "normal",
+                      "type": "clipboard",
+                      "text": "https://www.google.com/search?q={var:query}"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "scriptfilter",
+      "command": "ch > conf",
+      "title": "ch > conf",
+      "subtitle": "Open config file",
+      "script_filter": "./node_modules/.bin/run-node src/openConf.js",
+      "running_subtext": "",
+      "withspace": false,
+      "arg_type": "no",
+      "action": [
+        {
+          "modifiers": "normal",
+          "type": "open",
+          "target": "{query}"
+        }
+      ]
+    },
+    {
+      "type": "scriptfilter",
+      "command": "chb",
+      "title": "chb",
+      "subtitle": "Search chrome bookmark",
+      "script_filter": "./node_modules/.bin/run-node src/fetchBookmark.js '{query}'",
+      "running_subtext": "Searching...",
+      "withspace": true,
+      "arg_type": "optional",
+      "action": [
+        {
+          "modifiers": "normal",
+          "type": "open",
+          "target": "{query}"
+        },
+        {
+          "modifiers": "cmd",
+          "type": "clipboard",
+          "text": "{query}"
+        }
+      ]
+    },
+    {
+      "type": "scriptfilter",
+      "title": "",
+      "subtitle": "Search chrome bookmark",
+      "script_filter": "./node_modules/.bin/run-node src/fetchBookmark.js '{query}'",
+      "running_subtext": "Searching...",
+      "withspace": true,
+      "arg_type": "optional",
+      "action": [
+        {
+          "modifiers": "normal",
+          "type": "cond",
+          "if": {
+            "cond": "{query} == \"back\"",
+            "action": {
+              "then": [
+                {
+                  "type": "alfred.workflow.output.callexternaltrigger",
+                  "error": "Not supported"
+                }
+              ],
+              "else": [
+                {
+                  "modifiers": "normal",
+                  "type": "open",
+                  "target": "{query}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "modifiers": "cmd",
+          "type": "clipboard",
+          "text": "{query}"
+        }
+      ]
+    },
+    {
+      "type": "scriptfilter",
+      "command": "chf",
+      "title": "chf",
+      "subtitle": "Search chrome bookmark folder",
+      "script_filter": "./node_modules/.bin/run-node src/fetchBookmarkFolder.js '{query}'",
+      "running_subtext": "Searching...",
+      "withspace": true,
+      "arg_type": "optional",
+      "action": [
+        {
+          "modifiers": "normal",
+          "type": "args",
+          "arg": "{var:folder} ",
+          "action": [
+            {
+              "modifiers": "normal",
+              "title": "",
+              "type": "scriptfilter",
+              "script_filter": "./node_modules/.bin/run-node src/fetchBookmark.js '{query}'",
+              "running_subtext": "Searching...",
+              "withspace": true,
+              "action": [
+                {
+                  "modifiers": "normal",
+                  "type": "cond",
+                  "if": {
+                    "cond": "{query} == \"back\"",
+                    "action": {
+                      "then": [
+                        {
+                          "type": "alfred.workflow.output.callexternaltrigger",
+                          "error": "Not supported"
+                        }
+                      ],
+                      "else": [
+                        {
+                          "modifiers": "normal",
+                          "type": "open",
+                          "target": "{query}"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "modifiers": "cmd",
+                  "type": "clipboard",
+                  "text": "{query}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "scriptfilter",
+      "command": "chm",
+      "title": "chm",
+      "subtitle": "Search chrome media history",
+      "script_filter": "./node_modules/.bin/run-node src/fetchPlaybackSession.js '{query}'",
+      "running_subtext": "Searching...",
+      "withspace": true,
+      "arg_type": "optional",
+      "action": [
+        {
+          "modifiers": "normal",
+          "type": "open",
+          "target": "{query}"
+        },
+        {
+          "modifiers": "cmd",
+          "type": "clipboard",
+          "text": "{query}"
+        }
+      ]
+    },
+    {
+      "type": "scriptfilter",
+      "command": "chh",
+      "title": "chh",
+      "subtitle": "Search chrome history",
+      "script_filter": "./node_modules/.bin/run-node src/fetchHistory.js '{query}'",
+      "running_subtext": "Searching...",
+      "withspace": true,
+      "arg_type": "optional",
+      "action": [
+        {
+          "modifiers": "normal",
+          "type": "open",
+          "target": "{query}"
+        },
+        {
+          "modifiers": "cmd",
+          "type": "clipboard",
+          "text": "{query}"
+        }
+      ]
+    },
+    {
+      "type": "scriptfilter",
+      "command": "cha",
+      "title": "cha",
+      "subtitle": "Search chrome autofill data",
+      "script_filter": "./node_modules/.bin/run-node src/fetchAutofillData.js '{query}'",
+      "running_subtext": "Searching...",
+      "withspace": true,
+      "arg_type": "optional",
+      "action": [
+        {
+          "modifiers": "normal",
+          "type": "clipboard",
+          "text": "{query}",
+          "action": [
+            {
+              "type": "alfred.workflow.output.dispatchkeycombo",
+              "error": "Not supported"
+            }
+          ]
+        },
+        {
+          "modifiers": "cmd",
+          "type": "clipboard",
+          "text": "{query}"
+        }
+      ]
+    },
+    {
+      "type": "scriptfilter",
+      "command": "chd",
+      "title": "chd",
+      "subtitle": "Search chrome download history",
+      "script_filter": "./node_modules/.bin/run-node src/fetchDownloadHistory.js '{query}'",
+      "running_subtext": "Searching...",
+      "withspace": true,
+      "arg_type": "optional",
+      "action": [
+        {
+          "type": "alfred.workflow.action.actioninalfred",
+          "error": "Not supported"
+        }
+      ]
+    },
+    {
+      "type": "scriptfilter",
+      "command": "chid",
+      "title": "chid",
+      "subtitle": "Search chrome user id",
+      "script_filter": "./node_modules/.bin/run-node src/fetchLoginData.js '{query}' --type=userId",
+      "running_subtext": "Searching...",
+      "withspace": true,
+      "arg_type": "optional",
+      "action": [
+        {
+          "modifiers": "normal",
+          "type": "clipboard",
+          "text": "{query}",
+          "action": [
+            {
+              "type": "alfred.workflow.output.dispatchkeycombo",
+              "error": "Not supported"
+            }
+          ]
+        },
+        {
+          "modifiers": "cmd",
+          "type": "clipboard",
+          "text": "{query}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "author": {
+    "name": "jopemachine",
+    "email": "jopemachine@gmail.com",
+    "url": "https://github.com/jopemachine/alfred-chrome-workflow"
+  },
+  "bugs": {
+    "url": "https://github.com/jopemachine/alfred-chrome-workflow/issues"
+  },
+  "deprecated": false,
+  "engines": {
+    "node": ">=4"
+  },
+  "name": "alfred-chrome-workflow",
+  "version": "0.2.8",
+  "description": "Chrome kernel based broswer workflow for Alfred 4",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jopemachine/alfred-chrome-workflow.git"
+  },
+  "keywords": [
+    "alfred",
+    "alfred-workflow",
+    "alfred4-workflow",
+    "alfy",
+    "chrome-search",
+    "chrome-download-log",
+    "chrome-autofill-data",
+    "chrome-media-history",
+    "chrome-bookmark",
+    "chrome-history",
+    "edge",
+    "chrome",
+    "chromium",
+    "chrome-canary"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jopemachine/alfred-chrome-workflow#readme",
+  "dependencies": {
+    "alfy": "^0.10.0",
+    "better-sqlite3": "^7.1.2",
+    "byte-size": "^7.0.1",
+    "humanize-duration": "^3.25.1",
+    "lodash": "^4.17.21",
+    "psl": "^1.8.0"
+  },
+  "files": [
+    "assets/*.png",
+    "info.plist",
+    "src/*.js",
+    "icon.png",
+    "conf.json",
+    "*.md",
+    "LICENSE",
+    "cache/empty"
+  ]
+}
