@@ -1,4 +1,4 @@
-const alfy = require('alfy');
+const alfy = require('arvis-workflow-tools');
 const _ = require('lodash');
 const { getChromeBookmark, getExecPath, bookmarkDFS } = require('./utils');
 const { addVariable } = require('./argHandler');

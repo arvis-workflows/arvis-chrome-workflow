@@ -41,7 +41,8 @@
     "byte-size": "^7.0.1",
     "humanize-duration": "^3.25.1",
     "lodash": "^4.17.21",
-    "psl": "^1.8.0"
+    "psl": "^1.8.0",
+    "arvis-workflow-tools": "../arvis-workflow-tools"
   },
   "files": [
     "assets/*.png",

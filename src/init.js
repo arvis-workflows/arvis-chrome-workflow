@@ -1,4 +1,4 @@
-const alfy = require('alfy');
+const alfy = require('arvis-workflow-tools');
 
 if (!alfy.config.has('setting')) {
   const defaultConfig = {

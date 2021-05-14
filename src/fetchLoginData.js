@@ -1,4 +1,4 @@
-const alfy = require('alfy');
+const alfy = require('arvis-workflow-tools');
 require('./init.js');
 const { parseArgv } = require('./argHandler');
 const psl = require('psl');

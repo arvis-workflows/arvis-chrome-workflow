@@ -1,7 +1,6 @@
 <h1 align="center">
   <a href="https://www.npmjs.com/package/arvis-chrome-workflow">
 		Arvis-chrome-workflow<br>
-	<img src="https://img.shields.io/badge/Arvis-4-blueviolet">
 	<img src="https://img.shields.io/npm/dt/arvis-chrome-workflow" alt="NPM Release">
 	<img src="https://img.shields.io/github/license/jopemachine/arvis-chrome-workflow.svg" alt="License">
   </a>

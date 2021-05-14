@@ -1,4 +1,4 @@
-const alfy = require('alfy');
+const alfy = require('arvis-workflow-tools');
 const path = require('path');
 const byteSize = require('byte-size');
 const psl = require('psl');

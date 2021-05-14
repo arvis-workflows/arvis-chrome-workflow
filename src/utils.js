@@ -6,9 +6,8 @@ const sqlite = require('better-sqlite3');
 const _ = require('lodash');
 const path = require('path');
 const fsPromise = require('fs').promises;
-const alfy = require('alfy');
+const alfy = require('arvis-workflow-tools');
 const os = require('os');
-const path = require('path');
 const sep = path.sep;
 
 const {
@@ -90,22 +89,22 @@ const handleInput = (str) => {
 };
 
 const getDBFilePath = (DBFile) => {
-  if (process.platform === "darwin") {
-    switch (conf["browser"]) {
-      case "Chrome Canary":
-        return `/Users/${userName}/Library/Application Support/Google/Chrome Canary/${conf["chrome_profile"]}/${DBFile}`;
-      case "Edge":
-        return `/Users/${userName}/Library/Application Support/Microsoft Edge/${conf["chrome_profile"]}/${DBFile}`;
-      case "Chromium":
-        // 'Chrome Cloud Enrollment' could be wrong (not sure)
-        return `/Users/${userName}/Library/Application Support/Google/Chrome Cloud Enrollment/${conf["chrome_profile"]}/${DBFile}`;
-      default:
-        return `/Users/${userName}/Library/Application Support/Google/Chrome/${conf["chrome_profile"]}/${DBFile}`;
+  if (process.platform === 'darwin') {
+    switch (conf['browser']) {
+    case 'Chrome Canary':
+      return `/Users/${userName}/Library/Application Support/Google/Chrome Canary/${conf['chrome_profile']}/${DBFile}`;
+    case 'Edge':
+      return `/Users/${userName}/Library/Application Support/Microsoft Edge/${conf['chrome_profile']}/${DBFile}`;
+    case 'Chromium':
+      // 'Chrome Cloud Enrollment' could be wrong (not sure)
+      return `/Users/${userName}/Library/Application Support/Google/Chrome Cloud Enrollment/${conf['chrome_profile']}/${DBFile}`;
+    default:
+      return `/Users/${userName}/Library/Application Support/Google/Chrome/${conf['chrome_profile']}/${DBFile}`;
     }
-  } else if (process.platform === "win32") {
-    switch (conf["browser"]) {
-      default:
-        return `${os.homedir}${sep}AppData${sep}Local${sep}Google${sep}Chrome${sep}User Data${sep}${conf["chrome_profile"]}${DBFile}`;
+  } else if (process.platform === 'win32') {
+    switch (conf['browser']) {
+    default:
+      return `${os.homedir}${sep}AppData${sep}Local${sep}Google${sep}Chrome${sep}User Data${sep}${conf['chrome_profile']}${DBFile}`;
     }
   }
   throw new Error(

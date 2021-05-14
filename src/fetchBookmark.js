@@ -1,4 +1,4 @@
-const alfy = require('alfy');
+const alfy = require('arvis-workflow-tools');
 const psl = require('psl');
 const _ = require('lodash');
 require('./init.js');

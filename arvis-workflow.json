@@ -22,7 +22,7 @@
         {
           "modifiers": "normal",
           "type": "script",
-          "script": "./node_modules/.bin/run-node src/init.js"
+          "script": "node src/init.js"
         }
       ]
     },
@@ -37,7 +37,7 @@
         {
           "modifiers": "normal",
           "type": "script",
-          "script": "./node_modules/.bin/run-node src/cacheFavicons.js '{query}'",
+          "script": "node src/cacheFavicons.js '{query}'",
           "action": [
             {
               "modifiers": "normal",
@@ -60,7 +60,7 @@
         {
           "modifiers": "normal",
           "type": "script",
-          "script": "./node_modules/.bin/run-node src/clearCache.js",
+          "script": "node src/clearCache.js",
           "action": [
             {
               "modifiers": "normal",
@@ -77,7 +77,7 @@
       "command": "chs",
       "title": "chs",
       "subtitle": "Search chrome queries",
-      "script_filter": "./node_modules/.bin/run-node src/chromeSearch.js '{query}'",
+      "script_filter": "node src/chromeSearch.js '{query}'",
       "running_subtext": "Searching...",
       "withspace": true,
       "arg_type": "optional",
@@ -149,7 +149,7 @@
       "command": "ch > conf",
       "title": "ch > conf",
       "subtitle": "Open config file",
-      "script_filter": "./node_modules/.bin/run-node src/openConf.js",
+      "script_filter": "node src/openConf.js",
       "running_subtext": "",
       "withspace": false,
       "arg_type": "no",
@@ -166,7 +166,7 @@
       "command": "chb",
       "title": "chb",
       "subtitle": "Search chrome bookmark",
-      "script_filter": "./node_modules/.bin/run-node src/fetchBookmark.js '{query}'",
+      "script_filter": "node src/fetchBookmark.js '{query}'",
       "running_subtext": "Searching...",
       "withspace": true,
       "arg_type": "optional",
@@ -187,7 +187,7 @@
       "type": "scriptfilter",
       "title": "",
       "subtitle": "Search chrome bookmark",
-      "script_filter": "./node_modules/.bin/run-node src/fetchBookmark.js '{query}'",
+      "script_filter": "node src/fetchBookmark.js '{query}'",
       "running_subtext": "Searching...",
       "withspace": true,
       "arg_type": "optional",
@@ -226,7 +226,7 @@
       "command": "chf",
       "title": "chf",
       "subtitle": "Search chrome bookmark folder",
-      "script_filter": "./node_modules/.bin/run-node src/fetchBookmarkFolder.js '{query}'",
+      "script_filter": "node src/fetchBookmarkFolder.js '{query}'",
       "running_subtext": "Searching...",
       "withspace": true,
       "arg_type": "optional",
@@ -240,7 +240,7 @@
               "modifiers": "normal",
               "title": "",
               "type": "scriptfilter",
-              "script_filter": "./node_modules/.bin/run-node src/fetchBookmark.js '{query}'",
+              "script_filter": "node src/fetchBookmark.js '{query}'",
               "running_subtext": "Searching...",
               "withspace": true,
               "action": [
@@ -282,7 +282,7 @@
       "command": "chm",
       "title": "chm",
       "subtitle": "Search chrome media history",
-      "script_filter": "./node_modules/.bin/run-node src/fetchPlaybackSession.js '{query}'",
+      "script_filter": "node src/fetchPlaybackSession.js '{query}'",
       "running_subtext": "Searching...",
       "withspace": true,
       "arg_type": "optional",
@@ -304,7 +304,7 @@
       "command": "chh",
       "title": "chh",
       "subtitle": "Search chrome history",
-      "script_filter": "./node_modules/.bin/run-node src/fetchHistory.js '{query}'",
+      "script_filter": "node src/fetchHistory.js '{query}'",
       "running_subtext": "Searching...",
       "withspace": true,
       "arg_type": "optional",
@@ -326,7 +326,7 @@
       "command": "cha",
       "title": "cha",
       "subtitle": "Search chrome autofill data",
-      "script_filter": "./node_modules/.bin/run-node src/fetchAutofillData.js '{query}'",
+      "script_filter": "node src/fetchAutofillData.js '{query}'",
       "running_subtext": "Searching...",
       "withspace": true,
       "arg_type": "optional",
@@ -354,7 +354,7 @@
       "command": "chd",
       "title": "chd",
       "subtitle": "Search chrome download history",
-      "script_filter": "./node_modules/.bin/run-node src/fetchDownloadHistory.js '{query}'",
+      "script_filter": "node src/fetchDownloadHistory.js '{query}'",
       "running_subtext": "Searching...",
       "withspace": true,
       "arg_type": "optional",
@@ -370,7 +370,7 @@
       "command": "chid",
       "title": "chid",
       "subtitle": "Search chrome user id",
-      "script_filter": "./node_modules/.bin/run-node src/fetchLoginData.js '{query}' --type=userId",
+      "script_filter": "node src/fetchLoginData.js '{query}' --type=userId",
       "running_subtext": "Searching...",
       "withspace": true,
       "arg_type": "optional",

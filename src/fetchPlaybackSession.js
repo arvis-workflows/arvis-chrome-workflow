@@ -1,6 +1,6 @@
 // https://dfir.blog/media-history-database-added-to-chrome/
 
-const alfy = require('alfy');
+const alfy = require('arvis-workflow-tools');
 const fsPromise = require('fs').promises;
 require('./init.js');
 const { getMediaHistoryDB } = require('./utils');
