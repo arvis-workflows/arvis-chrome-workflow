@@ -15,7 +15,9 @@
   "version": "0.2.8",
   "description": "Chrome kernel based broswer workflow for Arvis",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "arvish-init",
+    "preuninstall": "arvish-cleanup"
   },
   "repository": {
     "type": "git",
@@ -42,7 +44,7 @@
     "humanize-duration": "^3.25.1",
     "lodash": "^4.17.21",
     "psl": "^1.8.0",
-    "arvis-workflow-tools": "../arvis-workflow-tools"
+    "arvish": "^0.1.0"
   },
   "files": [
     "assets/*.png",

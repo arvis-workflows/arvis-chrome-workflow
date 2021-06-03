@@ -1,7 +1,6 @@
 {
   "$schema": "some_schema_file_path",
   "defaultIcon": "icon.png",
-  "bundleId": "arvis-chrome-workflow",
   "category": "Productivity",
   "createdby": "jopemachine",
   "description": "Chrome kernel based broswer workflow for Arvis 4",
