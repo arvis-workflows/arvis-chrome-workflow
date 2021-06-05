@@ -1,3 +1,4 @@
+const fs = require('fs');
 const fsPromise = require('fs').promises;
 const psl = require('psl');
 const {
@@ -11,6 +12,10 @@ const path = require('path');
 const sep = path.sep;
 
 (async function() {
+  if (!fs.existsSync('cache')) {
+    fs.mkdirSync('cache');
+  }
+
   const historyDB = getHistoryDB();
   getFaviconDB();
   historyDB.prepare(`ATTACH DATABASE './${FAVICON_DB}' AS favicons`).run();

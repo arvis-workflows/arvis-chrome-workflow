@@ -56,7 +56,11 @@ The prerequisites below are required to use that package.
 
 ##  🔨 How to install
 
-1. **Install package by arvisworkflow file**
+1. **Install package by npm**
+
+```
+$ npm install --global arvis-chrome-workflow
+```
 
 2. **Check your `chrome_profile` on `/Users/<username>/Library/Application Support/Google/Chrome/<chrome_profile>/`. default value is set by `Default`.**
 
