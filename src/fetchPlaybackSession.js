@@ -1,6 +1,6 @@
 // https://dfir.blog/media-history-database-added-to-chrome/
 
-const alfy = require('arvis-workflow-tools');
+const arvish = require('@jopemachine/arvish');
 const fsPromise = require('fs').promises;
 require('./init.js');
 const { getMediaHistoryDB } = require('./utils');
@@ -15,10 +15,10 @@ const _ = require('lodash');
 const path = require('path');
 const sep = path.sep;
 
-const conf = alfy.config.get('setting');
+const conf = arvish.config.get('setting');
 
 (async function() {
-  let input = alfy.input ? alfy.input.normalize() : '';
+  let input = arvish.input ? arvish.input.normalize() : '';
   input = handleInput(input);
   const isDomainSearch = input.isDomainSearch;
   const isArtistSearch = input.isArtistSearch;
@@ -124,5 +124,5 @@ const conf = alfy.config.get('setting');
     });
   }
 
-  alfy.output(result);
+  arvish.output(result);
 }) ();

@@ -1,9 +1,9 @@
 const _ = require('lodash');
-const alfy = require('arvis-workflow-tools');
+const arvish = require('@jopemachine/arvish');
 const psl = require('psl');
 require('./init.js');
 
-const conf = alfy.config.get('setting');
+const conf = arvish.config.get('setting');
 const path = require('path');
 const sep = path.sep;
 
@@ -19,7 +19,7 @@ const {
 } = require('./utils');
 
 (async function () {
-  let input = alfy.input ? alfy.input.normalize() : '';
+  let input = arvish.input ? arvish.input.normalize() : '';
   input = handleInput(input);
   const isDomainSearch = input.isDomainSearch;
   const domainQuery = isDomainSearch ? input.domain : input.query;
@@ -108,5 +108,5 @@ const {
     },
   });
 
-  alfy.output(result);
+  arvish.output(result);
 })();

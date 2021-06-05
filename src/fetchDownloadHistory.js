@@ -1,4 +1,4 @@
-const alfy = require('arvis-workflow-tools');
+const arvish = require('@jopemachine/arvish');
 const path = require('path');
 const byteSize = require('byte-size');
 const psl = require('psl');
@@ -13,13 +13,13 @@ const {
 const userName = require('os').userInfo().username;
 const sep = path.sep;
 
-const conf = alfy.config.get('setting');
+const conf = arvish.config.get('setting');
 
 (async function() {
   let downloadInfos = getHistoryDB()
     .prepare(`SELECT * FROM downloads ORDER BY start_time ${conf.chd.sort}`)
     .all();
-  const input = alfy.input ? alfy.input.normalize() : null;
+  const input = arvish.input ? arvish.input.normalize() : null;
 
   if (input) {
     downloadInfos = downloadInfos.filter(item => {
@@ -88,5 +88,5 @@ const conf = alfy.config.get('setting');
     });
   }
 
-  alfy.output(result);
+  arvish.output(result);
 }) ();

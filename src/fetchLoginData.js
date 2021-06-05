@@ -1,4 +1,4 @@
-const alfy = require('arvis-workflow-tools');
+const arvish = require('@jopemachine/arvish');
 require('./init.js');
 const { parseArgv } = require('./argHandler');
 const psl = require('psl');
@@ -8,7 +8,7 @@ const {
   extractHostname
 } = require('./utils');
 
-const conf = alfy.config.get('setting');
+const conf = arvish.config.get('setting');
 const path = require('path');
 const sep = path.sep;
 
@@ -97,5 +97,5 @@ const sep = path.sep;
     });
   }
 
-  alfy.output(result);
+  arvish.output(result);
 }) ();

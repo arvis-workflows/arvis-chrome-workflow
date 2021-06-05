@@ -1,16 +1,16 @@
-const alfy = require('arvis-workflow-tools');
+const arvish = require('@jopemachine/arvish');
 require('./init.js');
 const {
   getWebDataDB,
   getLocaleString,
 } = require('./utils');
 const _ = require('lodash');
-const conf = alfy.config.get('setting');
+const conf = arvish.config.get('setting');
 const path = require('path');
 const sep = path.sep;
 
 (async function() {
-  let input = alfy.input ? alfy.input.normalize() : '';
+  let input = arvish.input ? arvish.input.normalize() : '';
 
   const webDataDB = getWebDataDB();
   let autofillDatas = webDataDB
@@ -74,5 +74,5 @@ const sep = path.sep;
     });
   }
 
-  alfy.output(result);
+  arvish.output(result);
 }) ();

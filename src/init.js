@@ -1,6 +1,6 @@
-const alfy = require('arvis-workflow-tools');
+const arvish = require('@jopemachine/arvish');
 
-if (!alfy.config.has('setting')) {
+if (!arvish.config.has('setting')) {
   const defaultConfig = {
     browser: 'Chrome',
     locale: 'en',
@@ -33,5 +33,5 @@ if (!alfy.config.has('setting')) {
     },
   };
 
-  alfy.config.set('setting', defaultConfig);
+  arvish.config.set('setting', defaultConfig);
 }

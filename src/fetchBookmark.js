@@ -1,4 +1,4 @@
-const alfy = require('arvis-workflow-tools');
+const arvish = require('@jopemachine/arvish');
 const psl = require('psl');
 const _ = require('lodash');
 require('./init.js');
@@ -14,7 +14,7 @@ const {
 const path = require('path');
 const sep = path.sep;
 
-const conf = alfy.config.get('setting');
+const conf = arvish.config.get('setting');
 
 (async function () {
   const bookmarkRoot = await getChromeBookmark();
@@ -124,5 +124,5 @@ const conf = alfy.config.get('setting');
     });
   }
 
-  alfy.output(result);
+  arvish.output(result);
 })();

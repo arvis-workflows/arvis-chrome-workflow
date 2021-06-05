@@ -1,4 +1,4 @@
-const alfy = require('arvis-workflow-tools');
+const arvish = require('@jopemachine/arvish');
 const _ = require('lodash');
 const { getChromeBookmark, getExecPath, bookmarkDFS } = require('./utils');
 const { addVariable } = require('./argHandler');
@@ -7,7 +7,7 @@ const sep = path.sep;
 
 (async function () {
   const bookmarkRoot = await getChromeBookmark();
-  const input = alfy.input ? alfy.input.normalize() : null;
+  const input = arvish.input ? arvish.input.normalize() : null;
 
   let bookmarks = bookmarkDFS(bookmarkRoot, { targets: ['folder'] });
 
@@ -63,5 +63,5 @@ const sep = path.sep;
     });
   }
 
-  alfy.output(result);
+  arvish.output(result);
 })();

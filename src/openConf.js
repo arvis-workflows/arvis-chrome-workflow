@@ -1,13 +1,13 @@
-const alfy = require('arvis-workflow-tools');
+const arvish = require('@jopemachine/arvish');
 const fs = require('fs');
 
 (async function () {
-  const path = alfy.config.path;
+  const path = arvish.config.path;
   if (!fs.existsSync(path)) {
     require('./init.js');
   }
 
-  alfy.output([{ 
+  arvish.output([{ 
     title: 'Open config file',
     arg: path 
   }]);

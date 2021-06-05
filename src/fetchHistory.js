@@ -1,4 +1,4 @@
-const alfy = require('arvis-workflow-tools');
+const arvish = require('@jopemachine/arvish');
 const fsPromise = require('fs').promises;
 const psl = require('psl');
 require('./init.js');
@@ -17,10 +17,10 @@ const { FAVICON_DB } = require('./constant');
 const path = require('path');
 const sep = path.sep;
 
-const conf = alfy.config.get('setting');
+const conf = arvish.config.get('setting');
 
 (async function() {
-  let input = alfy.input ? alfy.input.normalize() : '';
+  let input = arvish.input ? arvish.input.normalize() : '';
   input = handleInput(input);
   const isDomainSearch = input.isDomainSearch;
   const domainQuery = isDomainSearch ? input.domain : input.query;
@@ -115,5 +115,5 @@ const conf = alfy.config.get('setting');
     });
   }
 
-  alfy.output(result);
+  arvish.output(result);
 }) ();

@@ -6,7 +6,7 @@ const sqlite = require('better-sqlite3');
 const _ = require('lodash');
 const path = require('path');
 const fsPromise = require('fs').promises;
-const alfy = require('arvis-workflow-tools');
+const arvish = require('@jopemachine/arvish');
 const os = require('os');
 const sep = path.sep;
 
@@ -18,7 +18,7 @@ const {
   LOGIN_DATA_DB,
 } = require('./constant');
 
-const conf = alfy.config.get('setting');
+const conf = arvish.config.get('setting');
 
 const filterExcludeDomain = (datas) => {
   return datas.filter(item => {
