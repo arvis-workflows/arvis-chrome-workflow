@@ -194,12 +194,7 @@
           "if": {
             "cond": "{query} == \"back\"",
             "action": {
-              "then": [
-                {
-                  "type": "arvis.workflow.output.callexternaltrigger",
-                  "error": "Not supported"
-                }
-              ],
+              "then": [],
               "else": [
                 {
                   "modifiers": "normal",
@@ -246,12 +241,7 @@
                   "if": {
                     "cond": "{query} == \"back\"",
                     "action": {
-                      "then": [
-                        {
-                          "type": "arvis.workflow.output.callexternaltrigger",
-                          "error": "Not supported"
-                        }
-                      ],
+                      "then": [],
                       "else": [
                         {
                           "modifiers": "normal",
@@ -331,12 +321,7 @@
           "modifiers": "normal",
           "type": "clipboard",
           "text": "{query}",
-          "action": [
-            {
-              "type": "arvis.workflow.output.dispatchkeycombo",
-              "error": "Not supported"
-            }
-          ]
+          "action": []
         },
         {
           "modifiers": "cmd",
@@ -354,12 +339,7 @@
       "running_subtext": "Searching...",
       "withspace": true,
       "arg_type": "optional",
-      "action": [
-        {
-          "type": "arvis.workflow.action.actioninarvis",
-          "error": "Not supported"
-        }
-      ]
+      "action": []
     },
     {
       "type": "scriptfilter",
@@ -375,12 +355,7 @@
           "modifiers": "normal",
           "type": "clipboard",
           "text": "{query}",
-          "action": [
-            {
-              "type": "arvis.workflow.output.dispatchkeycombo",
-              "error": "Not supported"
-            }
-          ]
+          "action": []
         },
         {
           "modifiers": "cmd",
