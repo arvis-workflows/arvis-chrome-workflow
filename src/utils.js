@@ -89,22 +89,27 @@ const handleInput = (str) => {
 };
 
 const getDBFilePath = (DBFile) => {
-  if (process.platform === 'darwin') {
-    switch (conf['browser']) {
-    case 'Chrome Canary':
-      return `/Users/${userName}/Library/Application Support/Google/Chrome Canary/${conf['chrome_profile']}/${DBFile}`;
-    case 'Edge':
-      return `/Users/${userName}/Library/Application Support/Microsoft Edge/${conf['chrome_profile']}/${DBFile}`;
-    case 'Chromium':
-      // 'Chrome Cloud Enrollment' could be wrong (not sure)
-      return `/Users/${userName}/Library/Application Support/Google/Chrome Cloud Enrollment/${conf['chrome_profile']}/${DBFile}`;
-    default:
-      return `/Users/${userName}/Library/Application Support/Google/Chrome/${conf['chrome_profile']}/${DBFile}`;
+  if (process.platform === "darwin") {
+    switch (conf["browser"]) {
+      case "Chrome Canary":
+        return `/Users/${userName}/Library/Application Support/Google/Chrome Canary/${conf["chrome_profile"]}/${DBFile}`;
+      case "Edge":
+        return `/Users/${userName}/Library/Application Support/Microsoft Edge/${conf["chrome_profile"]}/${DBFile}`;
+      case "Chromium":
+        // 'Chrome Cloud Enrollment' could be wrong (not sure)
+        return `/Users/${userName}/Library/Application Support/Google/Chrome Cloud Enrollment/${conf["chrome_profile"]}/${DBFile}`;
+      default:
+        return `/Users/${userName}/Library/Application Support/Google/Chrome/${conf["chrome_profile"]}/${DBFile}`;
     }
-  } else if (process.platform === 'win32') {
-    switch (conf['browser']) {
-    default:
-      return `${os.homedir}${sep}AppData${sep}Local${sep}Google${sep}Chrome${sep}User Data${sep}${conf['chrome_profile']}${sep}${DBFile}`;
+  } else if (process.platform === "win32") {
+    switch (conf["browser"]) {
+      default:
+        return `${os.homedir}${sep}AppData${sep}Local${sep}Google${sep}Chrome${sep}User Data${sep}${conf["chrome_profile"]}${sep}${DBFile}`;
+    }
+  } else if (process.platform === "linux") {
+    switch (conf["browser"]) {
+      default:
+        return `${os.homedir}${sep}.config${sep}google-chrome${sep}${conf["chrome_profile"]}${sep}${DBFile}`;
     }
   }
   throw new Error(
