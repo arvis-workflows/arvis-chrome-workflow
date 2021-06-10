@@ -9,10 +9,10 @@
   },
   "deprecated": false,
   "engines": {
-    "node": ">=4"
+    "node": ">=10"
   },
   "name": "@jopemachine/arvis-chrome-workflow",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "Chrome kernel based broswer workflow for Arvis",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -26,6 +26,7 @@
   "keywords": [
     "arvis",
     "arvish",
+    "arvis-workflow",
     "chrome-search",
     "chrome-download-log",
     "chrome-autofill-data",
@@ -45,7 +46,7 @@
     "humanize-duration": "^3.25.1",
     "lodash": "^4.17.21",
     "psl": "^1.8.0",
-    "@jopemachine/arvish": "^0.1.26"
+    "@jopemachine/arvish": "^0.1.27"
   },
   "files": [
     "arvis-workflow.json",
