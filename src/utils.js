@@ -6,7 +6,7 @@ const sqlite = require('better-sqlite3');
 const _ = require('lodash');
 const path = require('path');
 const fsPromise = require('fs').promises;
-const arvish = require('@jopemachine/arvish');
+const arvish = require('arvish');
 const os = require('os');
 const sep = path.sep;
 

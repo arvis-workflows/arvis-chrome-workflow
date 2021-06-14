@@ -1,4 +1,4 @@
-const arvish = require('@jopemachine/arvish');
+const arvish = require('arvish');
 require('./init.js');
 const { parseArgv } = require('./argHandler');
 const psl = require('psl');

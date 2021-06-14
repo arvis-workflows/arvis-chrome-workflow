@@ -1,4 +1,4 @@
-const arvish = require('@jopemachine/arvish');
+const arvish = require('arvish');
 const path = require('path');
 const byteSize = require('byte-size');
 const psl = require('psl');

@@ -1,5 +1,5 @@
 {
-  "$schema": "some_schema_file_path",
+  "$schema": "https://raw.githubusercontent.com/jopemachine/arvis-extension-validator/master/workflow-schema.json",
   "defaultIcon": "icon.png",
   "category": "Productivity",
   "creator": "jopemachine",

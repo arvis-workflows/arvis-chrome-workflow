@@ -1,6 +1,6 @@
 // https://dfir.blog/media-history-database-added-to-chrome/
 
-const arvish = require('@jopemachine/arvish');
+const arvish = require('arvish');
 const fsPromise = require('fs').promises;
 require('./init.js');
 const { getMediaHistoryDB } = require('./utils');

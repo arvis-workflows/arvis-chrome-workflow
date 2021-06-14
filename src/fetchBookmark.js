@@ -1,4 +1,4 @@
-const arvish = require('@jopemachine/arvish');
+const arvish = require('arvish');
 const psl = require('psl');
 const _ = require('lodash');
 require('./init.js');

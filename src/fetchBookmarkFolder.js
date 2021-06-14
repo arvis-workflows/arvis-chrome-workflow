@@ -1,4 +1,4 @@
-const arvish = require('@jopemachine/arvish');
+const arvish = require('arvish');
 const _ = require('lodash');
 const { getChromeBookmark, getExecPath, bookmarkDFS } = require('./utils');
 const { addVariable } = require('./argHandler');

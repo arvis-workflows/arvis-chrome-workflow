@@ -1,4 +1,4 @@
-const arvish = require('@jopemachine/arvish');
+const arvish = require('arvish');
 const fsPromise = require('fs').promises;
 const psl = require('psl');
 require('./init.js');
