@@ -52,7 +52,6 @@ The prerequisites below are required to use that package.
 
 * [Chrome](https://www.google.com/intl/en/chrome/) or Chrome based browser (Chrome canary, edge, chromium.. etc)
 
-* [Arvis powerpack](https://www.arvisapp.com/powerpack/)
 
 ##  🔨 How to install
 
