@@ -6,7 +6,7 @@
   "description": "Chrome kernel based broswer workflow for Arvis 4",
   "name": "arvis-chrome-workflow",
   "readme": "https://github.com/jopemachine/arvis-chrome-workflow",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "webAddress": "https://github.com/jopemachine/arvis-chrome-workflow",
   "enabled": true,
   "commands": [
