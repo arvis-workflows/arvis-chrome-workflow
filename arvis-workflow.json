@@ -6,14 +6,13 @@
   "description": "Chrome kernel based broswer workflow for Arvis 4",
   "name": "arvis-chrome-workflow",
   "readme": "https://github.com/jopemachine/arvis-chrome-workflow",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "webAddress": "https://github.com/jopemachine/arvis-chrome-workflow",
   "enabled": true,
   "commands": [
       {
           "type": "keyword",
           "command": "ch > init",
-          "text": "Init your config file",
           "subtitle": "",
           "argType": "no",
           "actions": [
@@ -27,7 +26,6 @@
       {
           "type": "keyword",
           "command": "ch > cache",
-          "text": "ch > cache",
           "subtitle": "Cache favicon images in advance from visit history",
           "argType": "no",
           "actions": [
@@ -49,7 +47,6 @@
       {
           "type": "keyword",
           "command": "ch > clearcache",
-          "text": "ch > clearcache",
           "subtitle": "Clean favicon cache",
           "argType": "no",
           "actions": [
