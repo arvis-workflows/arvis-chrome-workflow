@@ -46,7 +46,7 @@
     "humanize-duration": "^3.25.1",
     "lodash": "^4.17.21",
     "psl": "^1.8.0",
-    "arvish": "^0.2.1"
+    "arvish": ">=0.3.1"
   },
   "files": [
     "arvis-workflow.json",
